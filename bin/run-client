@@ -1,0 +1,8 @@
+#!/bin/sh
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$SNAP/lib/nextcloud
+
+mkdir -p $SNAP_USER_DATA/.cache
+export TMPDIR=$SNAP_USER_DATA/.cache
+
+desktop-launch nextcloud

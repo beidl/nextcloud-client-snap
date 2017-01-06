@@ -1,5 +1,5 @@
 name: nextcloud-client-kyrofa
-version: 2.2.4
+version: 2.2.4snap2
 summary: Nextcloud Desktop Client
 grade: stable
 confinement: strict
@@ -9,7 +9,7 @@ description: |
 
 apps:
   nextcloud-client:
-    command: env LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$SNAP/lib/nextcloud desktop-launch nextcloud
+    command: run-client
     plugs:
       - network
       - network-bind
@@ -35,3 +35,6 @@ parts:
       - libqt5webkit5-dev
       - qt5keychain-dev
     after: [desktop-qt5]
+
+  client-runner:
+    plugin: dump
